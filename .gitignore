@@ -32,6 +32,9 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 # IntelliJ based IDEs
 .idea
 
+# Zed
+.zed
+
 # Finder (MacOS) folder config
 .DS_Store
 .devtools
@@ -41,3 +44,6 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 # open-harness dev server artifacts
 .open-harness-dev-server-state.json
 .open-harness-dev-server-*.pid
+
+# Claude
+*.local.json
