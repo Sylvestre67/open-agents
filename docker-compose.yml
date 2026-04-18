@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:latest
+    container_name: open-agents-db
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: open_agents_db
+    ports:
+      # Map internal port 5432 to host port 5432
+      - "5432:5432"
+    volumes:
+      # Use a named volume for persistent data storage
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:latest
+    container_name: open-agents-redis
+    restart: always
+    ports:
+      # Expose Redis on the host's port 6379
+      - "6379:6379"
+    volumes:
+      # Use a named volume for persistent Redis data
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:
